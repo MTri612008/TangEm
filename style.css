@@ -1,0 +1,236 @@
+html, body{
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #fbc2eb 100%);
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden !important;
+}
+.heart {
+    position: absolute;
+    background-image: url("src/flower.png");
+    animation: fall linear infinite;
+    opacity: 0.8;
+    user-select: none;
+    z-index: 1;
+    transition: transform 0.3s ease;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .bigHeart{
+    background-image: url("src/traitim.png");
+    background-repeat: no-repeat;
+    background-size: contain;          /* ảnh thu nhỏ để vừa thẻ */
+    background-position: center;       /* căn giữa ảnh */
+    width: 400px;                      /* hoặc kích thước bạn muốn */
+    height: 400px;
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    user-select: none;
+    z-index: 10;
+    transform: translateY(-50%);
+    overflow: hidden !important;
+    transition: 0.3s;
+  }
+  .bigHeart.clicked {
+    animation: popAndShake 0.6s ease infinite;
+  }
+  @keyframes popAndShake {
+    0%   { transform: translate(0%, -50%) scale(1); }
+    30%  { transform: translate(0%, -50%) scale(1.2); }
+    50%  { transform: translate(0%, -50%) scale(1.1) rotate(2deg); }
+    70%  { transform: translate(0%, -50%) scale(1.2) rotate(-2deg); }
+    100% { transform: translate(0%, -50%) scale(1); }
+  }
+  .SleepyCat{
+    background-image: url("src/cat.gif");
+    background-repeat: no-repeat;
+    background-size: contain;          /* ảnh thu nhỏ để vừa thẻ */
+    background-position: center;       /* căn giữa ảnh */
+    width: 250px;                      /* hoặc kích thước bạn muốn */
+    height: 250px;
+    position: absolute;
+     top: 70%;
+    left: 42%;
+    user-select: none;
+  }
+  .DancingCat{
+    background-image: url("src/cat-cute.gif");
+    background-repeat: no-repeat;
+    background-size: contain;          /* ảnh thu nhỏ để vừa thẻ */
+    background-position: center;       /* căn giữa ảnh */
+    width: 250px;                      /* hoặc kích thước bạn muốn */
+    height: 250px;
+    position: absolute;
+     top: 70%;
+    left: 42%;
+    user-select: none;
+  }
+  .Speech{
+     background-image: url("src/CatSpeech.png");
+    background-repeat: no-repeat;
+    background-size: contain;          /* ảnh thu nhỏ để vừa thẻ */
+    background-position: center;  
+    transform: translateY(30px);
+     animation: showBubble 0.6s ease-out forwards;
+     animation-delay: 2s;
+     opacity: 0;
+     width: 280px;                      /* hoặc kích thước bạn muốn */
+    height: 280px;
+    position: absolute;
+     top: 55%;
+    left: 52%;
+    user-select: none;  
+  }
+  .Speech1{
+     background-image: url("src/Speech1.png");
+    background-repeat: no-repeat;
+    background-size: contain;          /* ảnh thu nhỏ để vừa thẻ */
+    background-position: center;  
+    transform: translateY(30px);
+     animation: showBubble 0.6s ease-out forwards;
+     animation-delay: 2s;
+     opacity: 0;
+     width: 580px;                      /* hoặc kích thước bạn muốn */
+    height: 580px;
+    position: absolute;
+     top: 45%;
+    left: 32%;
+    user-select: none;  
+  }
+  .Speech2{
+    background-image: url("src/Speech2.png");
+     animation-delay: 12s;
+  }
+  @keyframes showBubble {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  .flyingCat{
+    background-image: url("src/flyCat.gif");
+    background-repeat: no-repeat;
+    background-size: contain;          /* ảnh thu nhỏ để vừa thẻ */
+    background-position: center;       /* căn giữa ảnh */
+    position: absolute;
+    user-select: none;
+    transition: transform 0.3s ease;
+      animation: Fly linear infinite;
+  }
+  .MyLove{
+    background-image: url("src/626575.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    animation: fall linear infinite;
+    opacity: 0.8;
+    z-index: 1;
+    user-select: none;
+  }
+  .MyLovely{
+    background-image: url("src/dth2.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    animation: fall linear infinite;
+    opacity: 0.8;
+    z-index: 1;
+    user-select: none;
+  }
+  .MyLovely2{
+    background-image: url("src/cuoi.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    animation: fall linear infinite;
+    opacity: 0.8;
+    z-index: 1;
+    user-select: none;
+  }
+  .heart:hover {
+    transform: scale(1.5) rotate(10deg);
+    
+  }
+  @keyframes fall {
+    0% {
+      transform: translateY(-10%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh);
+      opacity: 0;
+    }
+  }
+  @keyframes Fly {
+    0% {
+       transform: translateX(-10%);
+    }
+
+    100%{
+      transform: translateX(180vw);
+    }
+  }
+   @media only screen and (max-width:500px){
+    .bigHeart{
+      top: 50%;
+    left: 20%;
+     width: 250px;                      /* hoặc kích thước bạn muốn */
+    height: 250px;
+    }
+    .SleepyCat{
+      width: 150px;                      /* hoặc kích thước bạn muốn */
+    height: 150px;
+   
+     top: 70%;
+    left: 30%;
+    }
+    .Speech{
+      width: 180px;                      /* hoặc kích thước bạn muốn */
+    height: 180px;
+    position: absolute;
+     top: 58%;
+    left: 50%;
+    }
+    .Speech1{
+       width: 480px;                      /* hoặc kích thước bạn muốn */
+    height: 480px;
+    position: absolute;
+     top: 45%;
+    left: -0%;
+    }
+
+   }
+    @media only screen and (max-width:400px){
+    .bigHeart{
+      top: 50%;
+    left: 16%;
+     width: 250px;                      /* hoặc kích thước bạn muốn */
+    height: 250px;
+    }
+    .SleepyCat{
+      width: 150px;                      /* hoặc kích thước bạn muốn */
+    height: 150px;
+   
+     top: 70%;
+    left: 30%;
+    }
+    .DancingCat{
+
+    }
+     .Speech1{
+       width: 480px;                      /* hoặc kích thước bạn muốn */
+    height: 480px;
+    position: absolute;
+     top: 50%;
+    left: -10%;
+    }
+
+   }
