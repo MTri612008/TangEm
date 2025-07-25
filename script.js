@@ -51,6 +51,15 @@ function addSpeech2(){
     document.body.appendChild(Speech2);
    
   }
+  function addSpeech3(){
+    const Speech3 = document.createElement('div')
+    const para = document.createElement('p')
+    Speech3.className = 'Speech3'
+    para.className="ReadyOrNot"
+    para.textContent="BÂY GIỜ THÌ...BREAK MY HEART"
+    Speech3.appendChild(para)
+    document.body.appendChild(Speech3);
+  }
   function CreateCat(){
     const randomMath = (Math.random() * 80 + 60) + 'px';
     const Img = document.createElement('div');
@@ -100,6 +109,7 @@ function addSpeech2(){
     }, 7000); 
   }
   const BigHeartBt = document.querySelector('.bigHeart')
+  //heart click event
   BigHeartBt.addEventListener('click',()=>{
     BigHeartBt.classList.remove("clicked");
     void BigHeartBt.offsetWidth;
@@ -109,6 +119,7 @@ function addSpeech2(){
      addDacingCat()
      addSpeech1()
      addSpeech2()
+     
     setInterval(createHeart, 400);
   setInterval(createLoveImg, 400); 
   setInterval(createMyLovelyImg, 5400);

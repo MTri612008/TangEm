@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
 html, body{
     background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #fbc2eb 100%);
     margin: 0;
@@ -18,30 +20,157 @@ html, body{
     background-attachment: fixed;
   }
   .bigHeart{
-    background-image: url("src/traitim.png");
-    background-repeat: no-repeat;
-    background-size: contain;          /* ảnh thu nhỏ để vừa thẻ */
-    background-position: center;       /* căn giữa ảnh */
-    width: 400px;                      /* hoặc kích thước bạn muốn */
-    height: 400px;
-    position: absolute;
-    top: 45%;
-    left: 40%;
-    user-select: none;
-    z-index: 10;
-    transform: translateY(-50%);
-    overflow: hidden !important;
-    transition: 0.3s;
+     background-color: crimson;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  z-index: 10;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 45%; 
+  top: 35%;
+ background: linear-gradient(0deg,rgba(255, 179, 213, 1) 1%, rgba(255, 253, 237, 1) 85%);
+  /* ✨ Glow mạnh hơn */
+  box-shadow:
+    0 0 25px rgba(255, 192, 203, 0.9),
+    0 0 45px rgba(255, 255, 255, 0.7),
+    0 0 60px rgba(255, 192, 203, 0.6);
+    animation: gentleGlow 1s ease-in-out infinite;
+    animation: floating 2s ease-out infinite;
   }
+  .bigHeart::before,
+.bigHeart::after {
+  content: "";
+  background-color: crimson;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  animation: pulsecolor 1.25s infinite;
+  background: linear-gradient(0deg,rgba(255, 179, 213, 1) 1%, rgba(255, 253, 237, 1) 85%);
+  /* ✨ Glow mạnh hơn */
+  
+}
+.bigHeart::before {
+  top: -100px;
+  left: 0;
+  background: linear-gradient(0deg,rgb(255, 216, 233) 1%, rgba(255, 253, 237, 1) 85%);
+  /* ✨ Glow mạnh hơn */
+  box-shadow:
+    0 0 25px rgba(255, 192, 203, 0.9),
+    0 0 45px rgba(255, 255, 255, 0.7),
+    0 0 60px rgba(255, 192, 203, 0.6);
+    animation: gentleGlow 3s ease-in-out infinite;
+}
+
+
+.bigHeart::after {
+  top: 0;
+  left: 100px;
+}
   .bigHeart.clicked {
     animation: popAndShake 0.6s ease infinite;
   }
+  .right-eye {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: #000000;
+  right: 60px;
+  top: -10x;
+  animation: blink 1s infinite;
+  }
+.right-eye::before {
+  top: -50px;
+  right: 0;
+}
+.right-eye::after {
+  top: 0;
+  right: 50px;
+}
+ span {
+      position: absolute;
+      transition: all 0.3s;
+      width: 10px;
+      height: 10px;
+      margin-left: 5px;
+      margin-top: 5px;
+      background: #000;
+      border-radius: 50%;
+    }
+
+.left-eye {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: #000000;
+  left: 175px;
+  bottom: 137px;
+  animation: blink 1s infinite;
+}
+.left-eye::before {
+  top: -50px;
+  right: 0;
+}
+.left-eye::after {
+  top: 0;
+  right: 50px;
+}
+.mouth {
+  position: absolute;
+  height: 10px;
+  width: 65px;
+  border-radius: 50%;
+  background-color: #000000; 
+  align-items: center;
+  bottom: 70%;
+  left: 50%;
+  z-index: 2;
+  transform: rotate(45deg);
+}
+@keyframes blink {
+ 0%, 100% {
+        transform: scale(1, .05);
+    }
+    5%,
+    95% {
+        transform: scale(1, 1);
+    }
+}
+  @keyframes gentleGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 25px rgba(255, 192, 203, 0.9),
+      0 0 45px rgba(255, 255, 255, 0.7),
+      0 0 60px rgba(255, 192, 203, 0.6);
+  }
+  50% {
+    box-shadow:
+      0 0 35px rgba(255, 192, 203, 1),
+      0 0 60px rgba(255, 255, 255, 0.85),
+      0 0 80px rgba(255, 192, 203, 0.75);
+  }
+}
   @keyframes popAndShake {
-    0%   { transform: translate(0%, -50%) scale(1); }
-    30%  { transform: translate(0%, -50%) scale(1.2); }
-    50%  { transform: translate(0%, -50%) scale(1.1) rotate(2deg); }
-    70%  { transform: translate(0%, -50%) scale(1.2) rotate(-2deg); }
-    100% { transform: translate(0%, -50%) scale(1); }
+    0%   { transform: translate(0%, 0%) scale(1) rotate(-45deg); }
+    30%  { transform: translate(0%, 0%) scale(1.2)rotate(-45deg); }
+    50%  { transform: translate(0%, 0%) scale(1.1) rotate(-43deg); }
+    70%  { transform: translate(0%, 0%) scale(1.2) rotate(-47deg); }
+    100% { transform: translate(0%, 0%) scale(1)rotate(-45deg); }
+  }
+  @keyframes floating {
+    0%,100%{
+      transform: translateY(-20%) rotate(-45deg);
+    }
+    50%{
+      transform: translateY(-10%)rotate(-45deg);
+    }
   }
   .SleepyCat{
     background-image: url("src/cat.gif");
@@ -102,6 +231,22 @@ html, body{
   .Speech2{
     background-image: url("src/Speech2.png");
      animation-delay: 12s;
+  }
+ 
+  
+  @keyframes floatUpDown {
+  0%, 100% {
+    transform: translateX(-30%) translateY(0);
+  }
+  50% {
+    transform: translateX(-60%) translateY(0px); /* bay lên nhẹ */
+  }
+}
+  @keyframes showTextBoxBallon {
+    0% {width: 0px; height: 0px; opacity: 0;}
+    30%{width: 350px; height: 40px; opacity: 0.5;}
+    60%{width: 800px; height: 80px; opacity: 1}
+    100%{width: 500px;height: 60px; opacity: 1;}
   }
   @keyframes showBubble {
   to {
@@ -222,9 +367,7 @@ html, body{
      top: 70%;
     left: 30%;
     }
-    .DancingCat{
-
-    }
+    
      .Speech1{
        width: 480px;                      /* hoặc kích thước bạn muốn */
     height: 480px;
