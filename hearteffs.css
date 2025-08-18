@@ -1,0 +1,112 @@
+.PicsHeart{
+    width: 600px;
+    height: 700px;
+    position: absolute;
+    display: flex;
+        justify-content: center;
+        /* căn giữa ngang */
+        align-items: center;
+        /* căn giữa dọc */
+    
+        
+}
+
+
+@keyframes blow{
+    0%{transform: translate(0%,0%) scale(1) rotate(-45deg);}
+    100% {
+             transform: translate(0%, 0%) scale(3) rotate(-45deg);
+         }
+}
+.randomPics {
+    width: 180px;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: absolute;
+    left: 45%;
+    top: 35%;
+
+    /* Tạo khung ảnh dễ thương */
+    border: 6px solid #fff;
+    /* viền trắng */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* bóng đổ mềm */
+    outline: 3px dashed #ffb6c1;
+    /* viền ngoài hồng pastel */
+    outline-offset: 8px;
+    /* cách ra một chút */
+
+    /* Hiệu ứng animation nhẹ khi hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.picsSize{
+    width: 80px;
+    height: 80px;
+    
+}
+
+.randomPics:hover {
+    transform: scale(1.05) rotate(-2deg);
+    /* nghiêng nhẹ dễ thương */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+.cat{
+    width: 55px;
+    height: 55px;
+    background-repeat: no-repeat;
+    background-size: contain;
+     background-position: center;
+    position: absolute;
+    left: 10px;
+        top: 0%;
+}
+.borderCat{
+    width: 60px;
+     height: 60px;
+     background-image: url('src/ngu.gif');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        left: 90%;
+        top: -20%;
+}
+@media only screen and (max-width:500px) {
+    .PicsHeart{
+        display: none;
+    }
+.randomPics{
+    top: 40%;
+        left: 35%;
+    width: 100px;
+    height: 100px;
+}
+.cat{
+    width: 40px;
+    height: 40px;
+}
+}
+
+@media only screen and (max-width:400px) {
+    .PicsHeart {
+            display: none;
+        }
+.randomPics {
+    top: 40%;
+        left: 35%;
+        width: 100px;
+        height: 100px;
+    }
+        .cat {
+            top: -10%;
+            width: 40px;
+            height: 40px;
+        }
+    .borderCat{
+        width: 50px;
+        height: 50px;
+    }
+}

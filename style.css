@@ -32,6 +32,7 @@ body {
   top: 0;
   transform: rotate(-45deg);
   position: absolute;
+
   left: 45%;
   top: 35%;
   background: linear-gradient(0deg, rgba(255, 179, 213, 1) 1%, rgba(255, 253, 237, 1) 85%);
@@ -42,6 +43,10 @@ body {
     0 0 60px rgba(255, 192, 203, 0.6);
   animation: gentleGlow 1s ease-in-out infinite;
   animation: floating 2s ease-out infinite;
+}
+.heartFade {
+  opacity: 0;
+  
 }
 
 .bigHeart::before,
@@ -239,6 +244,7 @@ span {
   width: 250px;
   /* hoặc kích thước bạn muốn */
   height: 250px;
+  z-index: 2;
   position: absolute;
   top: 70%;
   left: 42%;
@@ -347,7 +353,9 @@ span {
   transition: transform 0.3s ease;
   animation: Fly linear infinite;
 }
+.eater{ 
 
+}
 .MyLove {
   background-image: url("src/626575.png");
   background-repeat: no-repeat;
