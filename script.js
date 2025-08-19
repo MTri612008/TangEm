@@ -74,6 +74,40 @@ document.addEventListener("mouseup", () => {
       
   
 });
+    
+    //mobile
+    catdance.addEventListener("touchstart", (e) => { 
+       const speech1 = document.querySelector('.Speech1')
+      const speech2 = document.querySelector('.Speech2')
+      try {
+         speech1.remove()
+      speech2.remove()
+      }catch{}
+      const touch = e.touches[0];
+      isCatDragging = true;
+      catOffsetX = touch.clientX - catdance.offsetLeft;
+      catOffsetY = touch.clientY - catdance.offsetTop;
+      catdance.style.transition = "none";
+
+    })
+     document.addEventListener("touchmove", (e) => {
+      if (!isCatDragging) return;
+      const touch = e.touches[0];
+      catdance.style.left = touch.clientX - catOffsetX + "px";
+      catdance.style.top = touch.clientY - catOffsetY + "px";
+    });
+
+    document.addEventListener("touchend", () => {
+      if (!isCatDragging) return;
+      isCatDragging = false;
+      catdance.style.transition = "top 0.3s ease, left 0.3s ease";
+      resetToCenter();
+      setTimeout(() => {
+      document.querySelector('.randomPics').remove()
+    }, 200);
+    });
+
+
   }
   function addSpeech1(){
     const Speech1 = document.createElement('div')
@@ -362,7 +396,23 @@ document.addEventListener("mouseup", () => {
       offsetX = touch.clientX - BigHeartBt.offsetLeft;
       offsetY = touch.clientY - BigHeartBt.offsetTop;
       BigHeartBt.style.transition = "none";
-       createRandomPics()
+      createRandomPics()
+      BigHeartBt.classList.remove("clicked");
+    void BigHeartBt.offsetWidth;
+    BigHeartBt.classList.add("clicked")
+    const audio = document.getElementById('audioCute')
+    audio.play()
+     addDacingCat()
+     addSpeech1()
+     addSpeech2()
+    eatHeart()
+   // createHeartPics()
+    CenterPicsHeart()
+    setInterval(createHeart, 400);
+  setInterval(createLoveImg, 400); 
+  setInterval(createMyLovelyImg, 5400);
+  setInterval(createSECMyLovelyImg, 5400);
+    setInterval(CreateCat, 10000)
     });
 
     document.addEventListener("touchmove", (e) => {
